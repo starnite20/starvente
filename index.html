@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="afficherPanier()">
+
+<header><h1>Ma boutique</h1></header>
+
+<div class="container">
+
+  <div class="products">
+    <div class="card">
+      <img src="images/produit1.jpg">
+      <h2>Produit 1</h2>
+      <p>10 €</p>
+      <button onclick="ajouterPanier('p1','Produit 1',10)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <img src="images/produit2.jpg">
+      <h2>Produit 2</h2>
+      <p>20 €</p>
+      <button onclick="ajouterPanier('p2','Produit 2',20)">Ajouter</button>
+    </div>
+  </div>
+
+  <div class="panier">
+    <h2>Panier</h2>
+    <ul id="listePanier"></ul>
+    <input id="codePromo" placeholder="Code promo">
+    <button onclick="appliquerCode()">Appliquer</button>
+    <p id="total"></p>
+    <a class="btn" href="paiement.html">Payer</a>
+  </div>
+
+</div>
+
+<script src="panier.js"></script>
+</body>
+</html>

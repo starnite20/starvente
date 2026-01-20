@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="afficherPanier()">
+
+<header><h1>Paiement sécurisé</h1></header>
+
+<div class="container panier">
+  <ul id="listePanier"></ul>
+  <p id="total"></p>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="viderPanier()">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="TON_EMAIL_PAYPAL">
+    <input type="hidden" name="item_name" value="Commande boutique">
+    <input type="hidden" name="amount" id="paypalAmount">
+    <input type="hidden" name="currency_code" value="EUR">
+    <input type="hidden" name="return" value="adresse.html">
+    <button type="submit">Payer avec PayPal</button>
+  </form>
+</div>
+
+<script src="panier.js"></script>
+</body>
+</html>

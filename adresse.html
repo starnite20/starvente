@@ -1,0 +1,17 @@
+<form action="https://formspree.io/f/TON_FORM_ID" method="POST">
+  <input type="hidden" name="commande" id="commande">
+
+  <label>Email :</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>Adresse :</label><br>
+  <textarea name="adresse" required></textarea><br><br>
+
+  <button type="submit">Envoyer</button>
+</form>
+
+<script>
+  const panier = JSON.parse(localStorage.getItem("panier")) || [];
+  document.getElementById("commande").value =
+    panier.map(p => `${p.nom} x${p.quantite}`).join(" | ");
+</script>
